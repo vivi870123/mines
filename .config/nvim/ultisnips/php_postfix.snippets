@@ -1,0 +1,41 @@
+priority -40
+
+snippet "(\S.*);p" "parenthesis postfix code" br
+${1}(`!p snip.rv = match.group(1)`)
+endsnippet
+
+snippet "(\S.*);if" "if postfix code" br
+if (${1:/* condition */}) {
+	`!p snip.rv = match.group(1)`;${2}
+}
+endsnippet
+
+snippet "(\S.*)\.if" "if postfix code" br
+if (`!p snip.rv = match.group(1)`) {
+	${1}
+}
+endsnippet
+
+snippet "(\S.*);for" "for postfix code" br
+for (${1}; ${2}; ${3}) {
+	`!p snip.rv = match.group(1)`;${4}
+}
+endsnippet
+
+snippet "(\S.*)\.for" "for postfix code" br
+for (`!p snip.rv = match.group(1)`; ${1}; ${2}) {
+	${3}
+}
+endsnippet
+
+snippet "(\S.*);fe" "foreach postfix code" br
+foreach (\$${1:variable} as \$${2:value}) {
+	`!p snip.rv = match.group(1)`;${3}
+}
+endsnippet
+
+snippet "(\S.*)\.fe" "foreach postfix code" br
+foreach (`!p snip.rv = match.group(1)` as \$${1:value}) {
+	${1}
+}
+endsnippet

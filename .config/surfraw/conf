@@ -1,0 +1,3 @@
+SURFRAW_graphical_browser=/usr/bin/google-chrome-stable
+SURFRAW_text_browser=/usr/bin/elinks
+SURFRAW_graphical=no

@@ -1,0 +1,23 @@
+priority -40
+
+snippet interface "Interface" b
+<?php`!v sniphpets#header()`
+
+namespace `!v sniphpets#namespace()`;
+
+interface `!v sniphpets#basename()`
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet interfacee "Interface extends another interface" b
+<?php`!v sniphpets#header()`
+
+namespace `!v sniphpets#namespace()`;
+
+interface `!v sniphpets#basename()` extends ${1}
+{
+	${VISUAL}${0}
+}
+endsnippet

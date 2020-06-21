@@ -1,0 +1,102 @@
+global !p
+
+def repeat_char(snip, ch):
+    comment_char = snip.opt("&commentstring")
+    comment_char_len = 0 if comment_char is None else len(comment_char)
+    repeated_ch = ch * (int(snip.opt("&tw")) - comment_char_len)
+
+    return (
+        comment_char % " " + repeated_ch if not (comment_char is None) else repeated_ch
+    )
+
+def make_box(twidth, bwidth=None):
+    b, m, e, i = (s.strip() for s in get_comment_format())
+    bwidth_inner = bwidth - 3 - max(len(b), len(i + e)) if bwidth else twidth + 2
+    sline = b + m + bwidth_inner * m[0] + 2 * m[0]
+    nspaces = (bwidth_inner - twidth) // 2
+    mlines = i + m + " " + " " * nspaces
+    mlinee = " " + " " * (bwidth_inner - twidth - nspaces) + m
+    eline = i + m + bwidth_inner * m[0] + 2 * m[0] + e
+    return sline, mlines, mlinee, eline
+endglobal
+
+snippet bang
+#!/usr/bin/env ${1:sh}
+
+$0
+endsnippet
+
+snippet todo "Add a todo with date and github user" b
+[TODO]: ${1:Do something} (`date +"%d-%m-%y %H:%M"`${2: - `echo $GITHUB_USER`})
+$0
+endsnippet
+
+snippet vimfold "fold comment" b
+${1:Fold title} {{{
+	${0:${VISUAL}}
+}}}
+endsnippet
+
+snippet :d "Jan 25, 2011"
+`date "+%b %e, %Y"`
+endsnippet
+
+snippet :dd "Sun, Jan 25"
+`date "+%a, %b %e"`
+endsnippet
+
+snippet :date "January 25, 2011"
+`date "+%B %e, %Y"`
+endsnippet
+
+snippet :t "15:35"
+`date "+%H:%M"`
+endsnippet
+
+snippet :time "03:35PM"
+`date "+%I:%M%p"`
+endsnippet
+
+snippet modeline "Vim modeline"
+`!v printf(&commentstring, ' vim:ft=')`
+endsnippet
+
+snippet box "A nice box with the current comment symbol" b
+`!p
+box = make_box(len(t[1]))
+snip.rv = box[0]
+snip += box[1]
+`${1:${VISUAL:content}}`!p
+box = make_box(len(t[1]))
+snip.rv = box[2]
+snip += box[3]`
+$0
+endsnippet
+
+snippet bbox "A nice box over the full width" b
+`!p
+if not snip.c:
+	width = int(vim.eval("&textwidth - (virtcol('.') == 1 ? 0 : virtcol('.'))")) or 71
+box = make_box(len(t[1]), width)
+snip.rv = box[0]
+snip += box[1]
+`${1:${VISUAL:content}}`!p
+box = make_box(len(t[1]), width)
+snip.rv = box[2]
+snip += box[3]`
+$0
+endsnippet
+
+snippet banner "add ascii banner"
+`!p snip.rv = repeat_char(snip, '━')`
+`!p
+comment_char = snip.opt('&commentstring')
+snip.rv = comment_char.replace('%s', ' ') if not (comment_char is None) else ''
+` $1
+`!p snip.rv = repeat_char(snip, '━')`
+$0
+endsnippet
+
+snippet uuid "Random UUID" w
+`!p if not snip.c: import uuid; snip.rv = uuid.uuid4()`
+endsnippet

@@ -1,0 +1,99 @@
+global !p
+from helpers import *
+endglobal
+
+snippet pretty "pretty-print JSON-able data" b
+console.log(
+	JSON.stringify({
+		$1
+	}, null, 2)
+)
+endsnippet
+
+snippet fun "function with dynamic docblock" bA
+`!p snip.rv=jsDoc(t[2])`
+function ${1}(${2}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# loop
+
+snippet forof "for of loop" b
+for (let ${1:value} of ${2:Things}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet forin "for each loop" b
+for (let ${1:key} in ${2:object}) {
+	if ($2.hasOwnProperty($1)) {
+		${0:let ${3:value} = $2[$1];}
+	}
+}
+endsnippet
+
+# ======= #
+# Modules #
+# ======= #
+
+# Only expand if on an empty line
+snippet "^req" "require()" brA
+const `!p snip.rv=formatVariableName(t[2])` = require('${2}')
+endsnippet
+
+# Only expand if on an empty line
+snippet "^imp" "import x form y" brA
+import `!p snip.rv=formatVariableName(t[1])` from '${1}'
+endsnippet
+
+snippet me "module.exports" b
+module.exports = ${1:`!p snip.rv = path_to_component_name(path, pascal_case_basename)`}$0
+endsnippet
+
+snippet ed "export default" b
+export default ${1:`!p snip.rv = path_to_component_name(path, pascal_case_basename)`}$0
+endsnippet
+
+# ============ #
+# Conditionals #
+# ============ #
+
+snippet if "if" b
+if (${1}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet el "else"
+else {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet eif "else if" !
+else if (${1}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# ======== #
+# Switches #
+# ======== #
+
+snippet sw "switch" b
+switch (${1}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet case "case" b
+case ${1}:
+	${0:${VISUAL}}
+	break;
+endsnippet
+
+snippet "(use|strict)" "'use strict' declaration" br
+'use strict';
+endsnippet
+

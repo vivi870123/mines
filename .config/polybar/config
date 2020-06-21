@@ -1,0 +1,301 @@
+[colors]
+# background = ${xrdb:color0:#222}
+background = #D914161F
+background-alt = #434758
+;foreground = ${xrdb:color7:#222}
+foreground = #bbc5ff
+foreground-alt = #d0d0d0
+primary = #82aaff
+secondary = #c792ea
+alert = #ff8b92
+
+[bar/main]
+monitor = ${env:MONITOR:eDP1}
+width = 98%
+height = 35
+offset-x = 1%
+offset-y = 1%
+;radius = 12.0
+fixed-center = true
+
+enable-ipc = true
+locale = en_GB.UTF-8
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #CC82aaff
+
+padding-left = 0
+padding-right = 0
+padding-top = 20
+padding-bottom = 5
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = mono:size=11:weight=bold;2
+font-1 = Inconsolata:size=11;2
+font-2 = Noto Color Emoji:scale=11:style=Regular;2
+font-3 = Symbola:pixelsize=11;3
+
+modules-left = bspwm
+modules-center = mpd cmus 
+modules-right = torrent pacupdate wifi backlight volume battery date
+
+tray-position = right
+tray-padding = 2
+
+cursor-click = pointer
+
+
+[module/bspwm]
+type = internal/bspwm
+wrapping-scroll = false
+pin-workspaces = false
+strip-wsnumbers = true
+
+label-focused = 
+label-focused-foreground = ${colors.secondary}
+;label-focused-underline= ${colors.background}
+label-focused-padding = 1
+
+label-occupied = 
+label-occupied-foreground = ${colors.secondary}
+label-occupied-padding = 1
+
+label-urgent = 
+label-urgent-foreground = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = 
+label-empty-padding = 1
+
+
+[module/mpd]
+type = internal/mpd
+; format-online =  <label-song>  <icon-prev> <icon-stop> <icon-next>
+format-online = <toggle> <label-song>
+format-paused = <toggle>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-consume = ✀
+
+label-song-maxlen = 65
+label-song-ellipsis = true
+
+
+[module/cmus]
+type = custom/script
+exec = ~/.local/bin/statusbar/player-cmus
+exec-if = pgrep -x cmus
+interval = 1
+click-left = cmus-remote --next
+click-right = cmus-remote --prev
+click-middle = cmus-remote --pause
+scroll-up = cmus-remote --volume +5%
+scroll-down = cmus-remote --volume -5%
+
+label-font = 1
+format = <label>
+format-underline = ${colors.foreground}
+label = %output%
+label-maxlen = 50
+
+
+[module/torrent]
+type = custom/script
+exec = ~/.local/bin/statusbar/torrent
+exec-if = pgrep -x transmission-remote-cli
+
+
+[module/pacupdate]
+type = custom/script
+exec = ~/.local/bin/statusbar/updates-arch-combined
+interval = 600
+
+format = <label>
+format-prefix = 
+format-prefix-padding-left = 1
+format-foreground = ${colors.secondary}
+format-background = ${colors.background}
+
+label = %output%
+label-padding = 1
+
+
+[module/wifi]
+type = internal/network
+interface = wlp2s0 
+interval = 3.0
+ping-interval = 0
+accumulate-stats = true
+
+format-connected-prefix = 
+format-connected-prefix-padding-left = 1
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.background}
+label-connected = %downspeed%
+label-connected-padding = 1.5
+
+format-disconnected-prefix =  睊
+format-disconnected-prefix-padding-left = 1
+format-disconnected-foreground = ${colors.alert}
+format-disconnected-background = ${colors.background}
+label-disconnected-padding = 1.5
+label-disconnected = Offline 
+
+format-packet-loss = <animation-packetloss> <label-packetloss>
+format-packetloss-prefix-padding-left = 1
+format-packetloss-foreground = ${colors.yellow}
+format-packetloss-background = ${colors.background}
+label-packetloss-padding = 1.5
+label-packetloss = Packet loss
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = ${colors.red}
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${colors.foreground}
+
+;[module/wifi]
+;type = internal/network
+;interface = wlp2s0
+;interval = 3.0
+
+;format-connected = <ramp-signal> <label-connected>
+;format-connected-underline = #c3e88d
+;label-connected = %essid%
+
+;format-disconnected =
+;;format-disconnected = <label-disconnected>
+;format-disconnected-underline = #f07178
+;label-disconnected = %ifname% disconnected
+;;label-disconnected-foreground = ${colors.foreground-alt}
+
+;ramp-signal-0 = 
+;ramp-signal-1 = 
+;ramp-signal-2 = 
+;ramp-signal-3 = 
+;ramp-signal-4 = 
+;ramp-signal-foreground = ${colors.foreground-alt}
+
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <ramp><label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+label = %percentage%%
+label-padding = 1
+label-font = 1
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-7 = 
+ramp-8 = 
+ramp-9 = 
+ramp-10 = 
+ramp-11 = 
+ramp-12 = 
+ramp-13 = 
+ramp-14 = 
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 99
+
+
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+# format-volume-underline = #82aaff
+label-volume =  %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 
+# label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator =
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+
+format-charging =  <label-charging>
+# format-charging-underline = #ffcb6b
+
+format-discharging =  <label-discharging>
+# format-discharging-underline = #f07178
+
+format-full-prefix = " "
+# format-full-suffix-foreground = #c3e88d
+# format-full-underline = #c3e88d
+
+[module/date]
+type = internal/date
+interval = 1
+
+format-prefix = 
+format-prefix-padding-left = 1
+
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+label = %date%%time%
+label-padding = 1
+
+time = %H:%M
+time-alt =
+date =
+date-alt = %d/%m/%Y
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+screenchange-reload = true
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+pseudo-transparency = false
+
+; vim:ft=dosini
+

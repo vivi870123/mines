@@ -1,0 +1,193 @@
+Jun 19 16:50 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 19 16:50 : avahi: Service 'Music Player @ mines' successfully established.
+Jun 19 16:50 : client: [0] opened from 127.0.0.1:56432
+Jun 19 16:52 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 19 16:52 : client: [0] opened from 127.0.0.1:56454
+Jun 19 16:52 : avahi: Service 'Music Player @ mines' successfully established.
+Jun 19 16:53 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 19 16:53 : avahi: Service 'Music Player @ mines' successfully established.
+Jun 19 16:53 : client: [0] opened from 127.0.0.1:56466
+Jun 19 16:54 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 19 16:54 : client: [0] opened from 127.0.0.1:56528
+Jun 19 16:54 : avahi: Service 'Music Player @ mines' successfully established.
+Jun 19 16:54 : client: [1] opened from 127.0.0.1:56532
+Jun 19 16:54 : client: [1] closed
+Jun 19 17:00 : client: [2] opened from 127.0.0.1:56760
+Jun 19 17:00 : update: added Deezer/The Weeknd - Blinding Lights.mp3
+Jun 19 17:00 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 19 17:00 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 19 17:00 : client: [2] closed
+Jun 19 17:01 : client: [3] opened from 127.0.0.1:56768
+Jun 19 17:01 : client: [3] closed
+Jun 19 17:01 : client: [4] opened from 127.0.0.1:56772
+Jun 19 17:01 : client: [4] closed
+Jun 19 17:02 : client: [5] opened from 127.0.0.1:56778
+Jun 19 17:02 : client: [6] opened from 127.0.0.1:56782
+Jun 19 17:02 : client: [6] closed
+Jun 19 17:02 : client: [7] opened from 127.0.0.1:56786
+Jun 19 17:02 : client: [7] closed
+Jun 19 17:02 : client: [8] opened from 127.0.0.1:56790
+Jun 19 17:02 : client: [8] closed
+Jun 19 17:02 : client: [9] opened from 127.0.0.1:56794
+Jun 19 17:02 : client: [9] closed
+Jun 19 17:03 : client: [10] opened from 127.0.0.1:56798
+Jun 19 17:03 : client: [10] closed
+Jun 19 17:03 : client: [11] opened from 127.0.0.1:56802
+Jun 19 17:03 : client: [11] closed
+Jun 19 17:03 : client: [12] opened from 127.0.0.1:56806
+Jun 19 17:03 : client: [12] closed
+Jun 19 17:03 : client: [13] opened from 127.0.0.1:56810
+Jun 19 17:03 : client: [13] closed
+Jun 19 17:03 : client: [5] closed
+Jun 19 17:03 : client: [14] opened from 127.0.0.1:56818
+Jun 19 17:03 : client: [15] opened from 127.0.0.1:56822
+Jun 19 17:03 : client: [15] closed
+Jun 19 17:03 : client: [16] opened from 127.0.0.1:56826
+Jun 19 17:03 : client: [16] closed
+Jun 19 17:04 : client: [14] closed
+Jun 19 17:04 : client: [17] opened from 127.0.0.1:56830
+Jun 19 17:04 : client: [17] closed
+Jun 19 17:04 : client: [18] opened from 127.0.0.1:56834
+Jun 19 17:04 : client: [18] closed
+Jun 19 17:04 : client: [19] opened from 127.0.0.1:56838
+Jun 19 17:04 : client: [19] closed
+Jun 19 17:04 : client: [20] opened from 127.0.0.1:56842
+Jun 19 17:04 : client: [20] closed
+Jun 19 17:04 : client: [21] opened from 127.0.0.1:56846
+Jun 19 17:04 : client: [21] closed
+Jun 19 17:04 : client: [22] opened from 127.0.0.1:56850
+Jun 19 17:04 : client: [22] closed
+Jun 19 17:04 : client: [23] opened from 127.0.0.1:56854
+Jun 19 17:04 : client: [23] closed
+Jun 19 17:04 : client: [24] opened from 127.0.0.1:56858
+Jun 19 17:04 : client: [24] closed
+Jun 19 17:04 : client: [25] opened from 127.0.0.1:56862
+Jun 19 17:04 : client: [25] closed
+Jun 19 17:04 : client: [26] opened from 127.0.0.1:56866
+Jun 19 17:04 : client: [26] closed
+Jun 19 17:04 : client: [27] opened from 127.0.0.1:56870
+Jun 19 17:04 : client: [27] closed
+Jun 19 17:12 : client: [0] closed
+Jun 19 17:12 : client: [28] opened from 127.0.0.1:56976
+Jun 19 17:12 : client: [29] opened from 127.0.0.1:56984
+Jun 19 17:12 : client: [29] closed
+Jun 19 17:12 : client: [30] opened from 127.0.0.1:56988
+Jun 19 17:12 : client: [30] closed
+Jun 19 17:12 : client: [31] opened from 127.0.0.1:56992
+Jun 19 17:12 : client: [32] opened from 127.0.0.1:56996
+Jun 19 17:12 : client: [32] closed
+Jun 19 17:12 : client: [33] opened from 127.0.0.1:57000
+Jun 19 17:12 : client: [33] closed
+Jun 19 17:12 : client: [34] opened from 127.0.0.1:57004
+Jun 19 17:12 : client: [34] closed
+Jun 19 17:12 : client: [35] opened from 127.0.0.1:57008
+Jun 19 17:12 : client: [35] closed
+Jun 19 17:12 : client: [31] closed
+Jun 19 17:16 : player: played "Deezer/The Weeknd - Blinding Lights.mp3"
+Jun 19 17:35 : client: [36] opened from 127.0.0.1:57342
+Jun 19 17:35 : client: [36] closed
+Jun 19 17:48 : client: [28] closed
+Jun 19 17:48 : client: [37] opened from 127.0.0.1:57842
+Jun 19 17:48 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 19 17:48 : client: [0] opened from 127.0.0.1:41376
+Jun 19 17:48 : avahi: Service 'Music Player @ mines' successfully established.
+Jun 19 17:49 : client: [1] opened from 127.0.0.1:41386
+Jun 19 17:49 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 19 17:49 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 19 17:49 : client: [2] opened from 127.0.0.1:41390
+Jun 19 17:49 : client: [2] closed
+Jun 19 17:49 : client: [3] opened from 127.0.0.1:41394
+Jun 19 17:49 : client: [3] closed
+Jun 19 17:49 : client: [4] opened from 127.0.0.1:41398
+Jun 19 17:49 : client: [4] closed
+Jun 19 17:49 : client: [5] opened from 127.0.0.1:41402
+Jun 19 17:49 : client: [5] closed
+Jun 19 17:49 : client: [6] opened from 127.0.0.1:41406
+Jun 19 17:49 : client: [6] closed
+Jun 19 17:49 : client: [7] opened from 127.0.0.1:41410
+Jun 19 17:49 : client: [7] closed
+Jun 19 17:49 : client: [8] opened from 127.0.0.1:41414
+Jun 19 17:49 : client: [8] closed
+Jun 19 17:50 : player: played "Deezer/The Weeknd - Blinding Lights.mp3"
+Jun 19 17:50 : exception: Not playing
+Jun 19 17:50 : client: [9] opened from 127.0.0.1:41418
+Jun 19 17:50 : client: [9] closed
+Jun 19 17:50 : client: [10] opened from 127.0.0.1:41422
+Jun 19 17:50 : client: [10] closed
+Jun 19 17:51 : client: [11] opened from 127.0.0.1:41426
+Jun 19 17:51 : client: [11] closed
+Jun 19 17:51 : client: [12] opened from 127.0.0.1:41430
+Jun 19 17:51 : client: [12] closed
+Jun 19 17:51 : client: [13] opened from 127.0.0.1:41434
+Jun 19 17:51 : client: [13] closed
+Jun 19 17:51 : client: [14] opened from 127.0.0.1:41438
+Jun 19 17:51 : client: [14] closed
+Jun 19 17:51 : client: [15] opened from 127.0.0.1:41442
+Jun 19 17:51 : client: [15] closed
+Jun 19 17:51 : client: [16] opened from 127.0.0.1:41446
+Jun 19 17:51 : client: [16] closed
+Jun 19 17:51 : client: [17] opened from 127.0.0.1:41450
+Jun 19 17:51 : client: [17] closed
+Jun 19 17:51 : client: [18] opened from 127.0.0.1:41454
+Jun 19 17:51 : client: [18] closed
+Jun 19 17:51 : client: [19] opened from 127.0.0.1:41458
+Jun 19 17:51 : client: [20] opened from 127.0.0.1:41462
+Jun 19 17:51 : client: [19] closed
+Jun 19 17:51 : client: [20] closed
+Jun 19 17:51 : client: [21] opened from 127.0.0.1:41466
+Jun 19 17:51 : client: [21] closed
+Jun 19 17:51 : client: [22] opened from 127.0.0.1:41470
+Jun 19 17:51 : client: [22] closed
+Jun 19 17:51 : client: [23] opened from 127.0.0.1:41474
+Jun 19 17:51 : client: [23] closed
+Jun 19 17:51 : client: [24] opened from 127.0.0.1:41478
+Jun 19 17:51 : client: [24] closed
+Jun 19 17:51 : client: [25] opened from 127.0.0.1:41482
+Jun 19 17:51 : client: [25] closed
+Jun 19 17:51 : client: [26] opened from 127.0.0.1:41486
+Jun 19 17:51 : client: [26] closed
+Jun 19 17:51 : client: [27] opened from 127.0.0.1:41490
+Jun 19 17:51 : client: [27] closed
+Jun 19 17:54 : player: played "Deezer/The Weeknd - Blinding Lights.mp3"
+Jun 19 17:54 : client: [28] opened from 127.0.0.1:41498
+Jun 19 17:54 : client: [28] closed
+Jun 19 17:54 : client: [29] opened from 127.0.0.1:41502
+Jun 19 17:54 : client: [29] closed
+Jun 19 17:57 : player: played "Deezer/The Weeknd - Blinding Lights.mp3"
+Jun 19 17:57 : client: [30] opened from 127.0.0.1:41506
+Jun 19 17:57 : client: [30] closed
+Jun 19 17:57 : client: [31] opened from 127.0.0.1:41510
+Jun 19 17:57 : client: [31] closed
+Jun 19 17:59 : update: added Deezer/Midas the Jagaban - Come We Bill Ehh.mp3
+Jun 19 17:59 : client: [32] opened from 127.0.0.1:41630
+Jun 19 17:59 : client: [32] closed
+Jun 19 17:59 : client: [33] opened from 127.0.0.1:41634
+Jun 19 17:59 : client: [33] closed
+Jun 19 17:59 : client: [1] closed
+Jun 19 18:00 : client: [34] opened from 127.0.0.1:41638
+Jun 19 18:00 : client: [35] opened from 127.0.0.1:41642
+Jun 19 18:00 : client: [35] closed
+Jun 19 18:00 : client: [36] opened from 127.0.0.1:41646
+Jun 19 18:00 : client: [36] closed
+Jun 19 18:00 : client: [34] closed
+Jun 19 18:00 : client: [37] opened from 127.0.0.1:41650
+Jun 19 18:00 : client: [38] opened from 127.0.0.1:41654
+Jun 19 18:00 : client: [38] closed
+Jun 19 18:00 : client: [39] opened from 127.0.0.1:41658
+Jun 19 18:00 : client: [39] closed
+Jun 19 18:00 : client: [37] closed
+Jun 19 18:01 : client: [40] opened from 127.0.0.1:41662
+Jun 19 18:01 : client: [40] closed
+Jun 19 18:01 : client: [41] opened from 127.0.0.1:41666
+Jun 19 18:01 : client: [41] closed
+Jun 19 18:02 : player: played "Deezer/Midas the Jagaban - Come We Bill Ehh.mp3"
+Jun 19 18:03 : client: [42] opened from 127.0.0.1:41744
+Jun 19 18:03 : client: [42] closed
+Jun 19 18:05 : client: [43] opened from 127.0.0.1:41752
+Jun 19 18:05 : client: [43] closed
+Jun 19 18:05 : client: [44] opened from 127.0.0.1:41756
+Jun 19 18:05 : client: [44] closed
+Jun 19 18:05 : client: [45] opened from 127.0.0.1:41760
+Jun 19 18:05 : client: [45] closed
+Jun 19 18:06 : client: [46] opened from 127.0.0.1:41764
+Jun 19 18:06 : client: [46] closed

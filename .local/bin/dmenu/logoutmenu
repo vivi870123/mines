@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case "$(printf "lockscreen\\nlogout\\nreboot\\nshutdown" | dmenu  -x 14 -y 8 -w 1340 -h 35 )" in
+	"lockscreen") slock ;;
+	"logout") prompt "logout?" "bspc quit" ;;
+	"reboot") prompt "reboot computer?" "sudo -A reboot" ;;
+	"shutdown") prompt "shutdown computer?" "sudo shutdown -h now" ;;
+esac

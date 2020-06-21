@@ -1,0 +1,6 @@
+#!/bin/sh
+case "$(printf "productivity\\ninternet\\nsettings" | dmenu -x 14 -y 8 -w 1340 -h 35)" in
+	"productivity") productivity-menu ;;
+	"internet") internet-menu ;;
+	"settings") settings-menu ;;
+esac

@@ -1,0 +1,61 @@
+sw_volume: 100
+audio_device_state:1:pulse audio
+audio_device_state:1:Visualizer Feed
+state: stop
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Deezer/The Weeknd - Blinding Lights.mp3
+1:Deezer/The Weeknd - Blinding Lights.mp3
+2:Deezer/The Weeknd - Blinding Lights.mp3
+3:Deezer/The Weeknd - Blinding Lights.mp3
+4:Deezer/The Weeknd - Blinding Lights.mp3
+5:Deezer/The Weeknd - Blinding Lights.mp3
+6:Deezer/The Weeknd - Blinding Lights.mp3
+7:Deezer/The Weeknd - Blinding Lights.mp3
+8:Deezer/The Weeknd - Blinding Lights.mp3
+9:Deezer/The Weeknd - Blinding Lights.mp3
+10:Deezer/The Weeknd - Blinding Lights.mp3
+11:Deezer/The Weeknd - Blinding Lights.mp3
+12:Deezer/The Weeknd - Blinding Lights.mp3
+13:Deezer/The Weeknd - Blinding Lights.mp3
+14:Deezer/The Weeknd - Blinding Lights.mp3
+15:Deezer/The Weeknd - Blinding Lights.mp3
+16:Deezer/The Weeknd - Blinding Lights.mp3
+17:Deezer/The Weeknd - Blinding Lights.mp3
+18:Deezer/The Weeknd - Blinding Lights.mp3
+19:Deezer/The Weeknd - Blinding Lights.mp3
+20:Deezer/The Weeknd - Blinding Lights.mp3
+21:Deezer/The Weeknd - Blinding Lights.mp3
+22:Deezer/The Weeknd - Blinding Lights.mp3
+23:Deezer/The Weeknd - Blinding Lights.mp3
+24:Deezer/The Weeknd - Blinding Lights.mp3
+25:Deezer/The Weeknd - Blinding Lights.mp3
+26:Deezer/The Weeknd - Blinding Lights.mp3
+27:Deezer/The Weeknd - Blinding Lights.mp3
+28:Deezer/The Weeknd - Blinding Lights.mp3
+29:Deezer/The Weeknd - Blinding Lights.mp3
+30:Deezer/The Weeknd - Blinding Lights.mp3
+31:Deezer/The Weeknd - Blinding Lights.mp3
+32:Deezer/The Weeknd - Blinding Lights.mp3
+33:Deezer/The Weeknd - Blinding Lights.mp3
+34:Deezer/The Weeknd - Blinding Lights.mp3
+35:Deezer/The Weeknd - Blinding Lights.mp3
+36:Deezer/The Weeknd - Blinding Lights.mp3
+37:Deezer/The Weeknd - Blinding Lights.mp3
+38:Deezer/The Weeknd - Blinding Lights.mp3
+39:Deezer/The Weeknd - Blinding Lights.mp3
+40:Deezer/The Weeknd - Blinding Lights.mp3
+41:Deezer/The Weeknd - Blinding Lights.mp3
+42:Deezer/The Weeknd - Blinding Lights.mp3
+43:Deezer/The Weeknd - Blinding Lights.mp3
+44:Deezer/The Weeknd - Blinding Lights.mp3
+45:Deezer/The Weeknd - Blinding Lights.mp3
+46:Deezer/The Weeknd - Blinding Lights.mp3
+47:Deezer/Midas the Jagaban - Come We Bill Ehh.mp3
+playlist_end

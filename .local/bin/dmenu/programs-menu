@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case "$(printf "automation\\nddspawn\\nseriestitles.py\\nsetbg\\nshow_art\\ntordone\\ntransadd\\numpv\\nwikinamer" | dmenu  -x 14 -y 8 -w 1340 -h 35 )" in
+	"automation") $TERMINAL -e $EDITOR ~/.local/bin/programs/automation ;;
+	"ddspawn") $TERMINAL -e $EDITOR ~/.local/bin/programs/ddspawn ;;
+	"seriestitles.py") $TERMINAL -e $EDITOR ~/.local/bin/programs/seriestitles.py ;;
+	"setbg") $TERMINAL -e $EDITOR ~/.local/bin/programs/setbg ;;
+	"tordone") $TERMINAL -e $EDITOR ~/.local/bin/programs/tordone ;;
+	"transadd") $TERMINAL -e $EDITOR ~/.local/bin/programs/transadd ;;
+	"umpv") $TERMINAL -e $EDITOR ~/.local/bin/programs/umpv ;;
+	"wikinamer") $TERMINAL -e $EDITOR ~/.local/bin/programs/wikinamer ;;
+esac

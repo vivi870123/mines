@@ -1,0 +1,38 @@
+# We use a little hack so that the snippet is expanded
+# and parsed correctly
+snippet snip "Snippet definition" b
+`!p snip.rv = "snippet"` ${1:Tab_trigger} "${2:Description}" ${3:b}
+$0
+`!p snip.rv = "endsnippet"`
+endsnippet
+
+snippet global "Global snippet" b
+`!p snip.rv = "global"` !p
+$0
+`!p snip.rv = "endglobal"`
+endsnippet
+
+snippet vis "${VISUAL}" i
+\$\{VISUAL${1:${2:default}${3:/transform/}}\}
+endsnippet
+
+snippet t1 "tabstop 1" b
+\$\{1:$1}$0
+endsnippet
+
+snippet t2 "tabstop 2" b
+\$\{2:$1}$0
+endsnippet
+
+snippet t3 "tabstop 3" b
+\$\{3:$1}$0
+endsnippet
+
+snippet t4 "tabstop 4" b
+\$\{4:$1}$0
+endsnippet
+
+snippet t5 "tabstop 5" b
+\$\{5:$1}$0
+endsnippet
+

@@ -1,0 +1,223 @@
+global !p
+import sniphpets
+endglobal
+
+snippet $ "Assign variable" b
+$${1} = ${2};
+endsnippet
+
+snippet do "do while"
+do {
+	${VISUAL}${2}
+} while (${1});
+endsnippet
+
+snippet if "if"
+if (${1}) {
+	${VISUAL}${2}
+}
+endsnippet
+
+snippet ifnull "if null"
+if (null === ${1}) {
+	${VISUAL}${2}
+}
+endsnippet
+
+snippet iftrue "if true"
+if ($1 === true) {
+	${VISUAL}${2}
+}
+endsnippet
+
+snippet iffalse "if false"
+if ($1 === false) {
+	${VISUAL}${2}
+}
+endsnippet
+
+snippet else "else"
+else {
+	${VISUAL}${1}
+}
+endsnippet
+
+snippet elif "elseif"
+elseif (${1}) {
+	${VISUAL}${2}
+}
+endsnippet
+
+snippet try "try/catch" b
+try {
+	${VISUAL}$0
+} catch (${1:Execption} $exception) {
+}
+endsnippet
+
+snippet tryf "try/catch/finally" b
+try {
+	${VISUAL}${0}
+} catch (${1:Exception} $exception) {
+} finally {
+}
+endsnippet
+
+snippet "(^|[^\w])fn" "Arrow function" r
+`!p snip.rv = match.group(1)`fn(${1}) => ${2}
+endsnippet
+
+snippet use "use" b
+use `!v matchstr(sniphpets#fqn(), '\v^([^\\]+\\){1}')`${1};
+endsnippet
+
+snippet use2 "use" b
+use `!v matchstr(sniphpets#fqn(), '\v^([^\\]+\\){2}')`${1};
+endsnippet
+
+snippet use3 "use" b
+use `!v matchstr(sniphpets#fqn(), '\v^([^\\]+\\){3}')`${1};
+endsnippet
+
+snippet use4 "use" b
+use `!v matchstr(sniphpets#fqn(), '\v^([^\\]+\\){4}')`${1};
+endsnippet
+
+snippet use5 "use" b
+use `!v matchstr(sniphpets#fqn(), '\v^([^\\]+\\){5}')`${1};
+endsnippet
+
+snippet containerget "Get from container" b
+/** @var ${1:Class} \$${2:`!p snip.rv = sniphpets.lcfirst(t[1])`} */
+\$$2 = ${3:App::getContainer()}->get($1::class);
+endsnippet
+
+snippet con "__construct()" b
+public function __construct($1)
+{${1/\s*\w* ?\$(\w+)(,\s+)*/\n        $this->$1 = $$1;/g}
+}
+endsnippet
+
+snippet _c "__construct()" b
+public function __construct($1)
+{${1/\s*\w* ?\$(\w+)(,\s+)*/\n        $this->$1 = $$1;/g}
+}
+endsnippet
+
+snippet pucase "PHPUnit / Test case" b
+<?php
+
+namespace `!v sniphpets#namespace()`;
+
+use PHPUnit\Framework\TestCase;
+
+final class `!v sniphpets#basename()` extends TestCase
+{
+	public function setUp(): void
+	{
+		${VISUAL}${0}
+	}
+}
+endsnippet
+
+snippet test "PHPUnit / Test method with it..." b
+public function test_it_${1}(): void
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet this "$this->" b
+$this->$0
+endsnippet
+
+snippet t. "$this->" bwA
+$this->$0
+endsnippet
+
+snippet vv "$" bwA
+$$0
+endsnippet
+
+snippet ret "return" b
+return $1;$0
+endsnippet
+
+snippet rett "return true" b
+return true;$0
+endsnippet
+
+snippet retf "return false" b
+return false;$0
+endsnippet
+
+snippet retn "return null" b
+return null;$0
+endsnippet
+
+snippet reta "return array" b
+return [$1];$0
+endsnippet
+
+snippet f. "function" bw
+function ${1:name}(${2:$param})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet pubf "public function" b
+public function ${1:name}(${2:$param})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet pubsf "public static function" b
+public static function ${1:name}(${2:$param})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet prof "protected function" b
+protected function ${1:name}(${2:$param})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet prosf "protected static function" b
+protected static function ${1:name}(${2:$param})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet prif "private function" b
+private function ${1:name}(${2:$param})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet prisf "private static function" b
+private static function ${1:name}(${2:$param})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet new "New class instance" b
+$${1:variableName} = new ${2:${1/\w+\s*/\u$0/}}($3);
+$0
+endsnippet
+
+snippet ns "namespace declaration" b
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+endsnippet
