@@ -109,9 +109,9 @@ super + shift + m
 
 # Audiokeys
 XF86AudioMute
-	amixer sset Master toggle; pkill -RTMIN+10 blocks
+	pulsemixer --toggle-mute
 XF86Audio{Raise,Lower}Volume
-	pulsemixer --unmute ; pulsemixer --change-volume {-,+}5
+	pulsemixer --unmute ; pulsemixer --change-volume {+,-}5
 XF86Audio{Next,Prev}
 	mpc {next,prev} && notify_currenttrack
 XF86Audio{Pause,Play,Stop}
@@ -278,9 +278,8 @@ super + o
 	bspc node -g sticky={on,off}
 
 # remove and restore polybar
-#super + b
-	# \{polybar-msg cmd toggle; bspc config top_padding 0 \} || \{ polybar-msg cmd toggle ; bspc config top_padding 24 \}
-#	{killall polybar ; bspc config top_padding 0,bspc config top_padding 25}
+super + alt + b
+	polybar-msg cmd toggle
 
 
 

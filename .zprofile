@@ -4,6 +4,8 @@
 # adds `~/.local/bin/*`to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # Default programs:
 export EDITOR="nvim"

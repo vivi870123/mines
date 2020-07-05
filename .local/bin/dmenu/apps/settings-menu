@@ -1,6 +1,0 @@
-#!/bin/sh
-
-case "$(printf "thunar\\nlxappearance" | dmenu -x 14 -y 8 -w 1340 -h 35)" in 
-	"thunar") thunar ;;
-	"lxappearance") lxappearance ;;
-esac

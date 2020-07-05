@@ -549,7 +549,7 @@ c.content.webrtc_ip_handling_policy = 'disable-non-proxied-udp'
 
 ## Limit fullscreen to the browser window (does not expand to fill the screen).
 ## [Bool]
-c.content.windowed_fullscreen = False
+c.content.fullscreen.window = False
 
 ## Monitor load requests for cross-site scripting attempts. Suspicious scripts will be blocked and reported in the inspector’s JavaScript console.
 ## This setting supports URL patterns.

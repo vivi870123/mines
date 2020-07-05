@@ -1,8 +1,0 @@
-#!/bin/sh
-
-case "$(printf "google\\nnicotine+\\nqtwebflix\\ntransmission" | dmenu -x 14 -y 8 -w 1340 -h 35)" in
-	"google") google-chrome-stable ;;
-	"nicotine+") nicotine ;;
-	"qtwebflix") qtwebflix ;;
-	"transmission") transmission-gtk ;;
-esac

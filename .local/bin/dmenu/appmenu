@@ -1,6 +1,13 @@
 #!/bin/sh
-case "$(printf "productivity\\ninternet\\nsettings" | dmenu -x 14 -y 8 -w 1340 -h 35)" in
-	"productivity") productivity-menu ;;
-	"internet") internet-menu ;;
-	"settings") settings-menu ;;
+
+case "$(printf "google\\nnicotine+\\nqtwebflix\\ntransmission\\ngimp\\nkdenlive\\nlibreoffice\\nthunar\\nlxapperance" | dmenu -x 14 -y 8 -w 1340 -h 35)" in
+	"google") google-chrome-stable ;;
+	"nicotine+") nicotine ;;
+	"qtwebflix") qtwebflix ;;
+	"transmission") transmission-gtk ;;
+	"gimp") gimp ;;
+	"kdenlive") kdenlive ;;
+	"libreoffice") libreoffice ;;
+	"thunar") thunar ;;
+	"lxappearance") lxappearance ;;
 esac
