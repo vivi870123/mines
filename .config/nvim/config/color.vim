@@ -76,6 +76,7 @@ function s:colors_setup() abort
 	highlight  gitSectionsRecentCommit guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
 
 	" }}}
+
 	" TSX highlight {{{
 	" -------------
 	" dark red
@@ -118,34 +119,34 @@ function s:colors_setup() abort
 	hi! link CocErrorFloat ALEError
 	hi! link CocWarningFloat ALEWarning
 
-	let matchGroupId = hlID(hlexists('ClapInput') != 0 ? 'ClapInput' : 'Visual')
-	let input_bg = synIDattr(synIDtrans(matchGroupId), 'bg#', 'gui')
-	let input_bg = input_bg !=# '' ? input_bg : synIDattr(synIDtrans(hlID('Visual')), 'bg#', 'gui')
+	" let matchGroupId = hlID(hlexists('ClapInput') != 0 ? 'ClapInput' : 'Visual')
+	" let input_bg = synIDattr(synIDtrans(matchGroupId), 'bg#', 'gui')
+	" let input_bg = input_bg !=# '' ? input_bg : synIDattr(synIDtrans(hlID('Visual')), 'bg#', 'gui')
 
-	let matchGroupId = hlID(hlexists('ClapDisplay') != 0 ? 'ClapDisplay' : 'Pmenu')
-	let display_bg = synIDattr(synIDtrans(matchGroupId), 'bg#', 'gui')
-	let display_bg = display_bg !=# '' ? display_bg : synIDattr(synIDtrans(hlID('Pmenu')), 'bg#', 'gui')
+	" let matchGroupId = hlID(hlexists('ClapDisplay') != 0 ? 'ClapDisplay' : 'Pmenu')
+	" let display_bg = synIDattr(synIDtrans(matchGroupId), 'bg#', 'gui')
+	" let display_bg = display_bg !=# '' ? display_bg : synIDattr(synIDtrans(hlID('Pmenu')), 'bg#', 'gui')
 
-	hi! ClapCurrentSelection guifg=#ffffff gui=bold
-	exec 'hi! ClapInput guifg=#ffffff guibg=' . input_bg
-	exec 'hi! ClapNoMatchesFound guifg=#fe4559 guibg=' . display_bg
-	hi! ClapQuery guifg=#ffffff
-	hi! link ClapSpinner ClapInput
+	" hi! ClapCurrentSelection guifg=#ffffff gui=bold
+	" exec 'hi! ClapInput guifg=#ffffff guibg=' . input_bg
+	" exec 'hi! ClapNoMatchesFound guifg=#fe4559 guibg=' . display_bg
+	" hi! ClapQuery guifg=#ffffff
+	" hi! link ClapSpinner ClapInput
 
 	hi! HoverDisplay guibg=#303030 guifg=#dddddd
 
-	let s:idx = 1
-	while s:idx < 9
-		execute 'hi! link ClapMatches' . s:idx . ' ClapMatches'
-		execute 'hi! link ClapFuzzyMatches' . s:idx . ' ClapMatches'
-		let s:idx += 1
-	endwhile
+	" let s:idx = 1
+	" while s:idx < 9
+	" 	execute 'hi! link ClapMatches' . s:idx . ' ClapMatches'
+	" 	execute 'hi! link ClapFuzzyMatches' . s:idx . ' ClapMatches'
+	" 	let s:idx += 1
+	" endwhile
 
-	while s:idx < 13
-		execute 'hi! link ClapFuzzyMatches' . s:idx . ' ClapMatches'
-		let s:idx += 1
-	endwhile
-	unlet s:idx
+	" while s:idx < 13
+	" 	execute 'hi! link ClapFuzzyMatches' . s:idx . ' ClapMatches'
+	" 	let s:idx += 1
+	" endwhile
+	" unlet s:idx
 endfunction
 
 augroup user_event_colors

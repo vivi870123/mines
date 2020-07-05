@@ -18,12 +18,6 @@ augroup user_plugin_filetype
 	" Equalize window dimensions when resizing vim window
 	autocmd VimResized * tabdo wincmd =
 
-	" Highlight current line only on focused window
-	autocmd WinEnter,InsertLeave * if &ft !~# '^\(denite\|clap_\)' |
-		\ set cursorline | endif
-	autocmd WinLeave,InsertEnter * if &ft !~# '^\(denite\|clap_\)' |
-		\ set nocursorline | endif
-
 	if has('folding')
 		" like the autocmd described in `:h last-position-jump` but we add `:foldopen!`.
 		autocmd BufWinEnter * if line("'\"") > 1 && line("'\"") <= line('$') | execute "normal! g`\"" | execute 'silent! ' . line("'\"") . 'foldopen!' | endif
@@ -41,7 +35,7 @@ augroup user_plugin_filetype
 	
 	" Reload vim config automatically
 	autocmd BufWritePost $VIM_PATH/{*.vim,*.yaml,vimrc} nested
-		\ source $MYVIMRC | redraw | call lightline#update()
+		\ source $MYVIMRC | redraw
 
 	" update filetype on save if empty
 	autocmd BufWritePost * nested

@@ -1,53 +1,38 @@
 ---
 # PLUGINS
-# ===
-# See config/plugins/all.vim for plugin mappings and config/plugins/*.vim
+# -------
 
 # Startup
 # -------
 - repo: Shougo/dein.vim
 - repo: haya14busa/dein-command.vim
+- repo: itchyny/vim-gitbranch
 - repo: editorconfig/editorconfig-vim
 - repo: dstein64/vim-startuptime
-
-# async building & commands
 - repo: skywind3000/asyncrun.vim
+- repo: andymass/vim-matchup
+  hook_add: |
+    let g:matchup_matchparen_deferred = 1
+    let g:matchup_matchparen_deferred_show_delay = 100
+    let g:matchup_matchparen_hi_surround_always = 1
+    let g:matchup_override_vimtex = 1
+    let g:matchup_delim_start_plaintext = 0
+    let g:matchup_transmute_enabled = 0
 
-  # Languages {{{
+
+  # Languages
   # ---------
 - repo: neoclide/jsonc.vim
 - repo: vim-jp/syntax-vim-ex
 
+# TypeScript & JavaScript
+- repo: leafgarland/typescript-vim
+- repo: peitalin/vim-jsx-typescript
+
 # Markdown related
 - repo: plasticboy/vim-markdown
   on_ft: markdown
-  hook_add: |
-    let g:vim_markdown_math = 1
-    let g:vim_markdown_frontmatter = 1
-    let g:vim_markdown_strikethrough = 1
-    let g:vim_markdown_folding_level = 6
-    let g:vim_markdown_override_foldtext = 1
-    let g:vim_markdown_folding_style_pythonic = 1
-    let g:vim_markdown_conceal = 0
-    let g:vim_markdown_conceal_code_blocks = 0
-    let g:vim_markdown_edit_url_in = 'vsplit'
-    let g:vim_markdown_follow_anchor = 1
-    let g:vim_markdown_auto_insert_bullets = 0
-    let g:vim_markdown_new_list_item_indent = 2
-    let g:vim_markdown_toc_autofit = 0
-    let g:vim_markdown_fenced_languages = [
-      \ 'c++=cpp',
-      \ 'viml=vim',
-      \ 'bash=sh',
-      \ 'ini=dosini',
-      \ 'js=javascript',
-      \ 'json=javascript',
-      \ 'jsx=javascriptreact',
-      \ 'tsx=typescriptreact',
-      \ 'docker=Dockerfile',
-      \ 'makefile=make',
-      \ 'py=python'
-      \ ]
+  hook_add: source $VIM_PATH/config/plugins/vim-markdown.vim
 
 - repo: rhysd/vim-gfm-syntax
   depends: vim-markdown
@@ -73,10 +58,6 @@
       \ 'seqence_diagrams': {},
       \ 'flowchart_diagrams': {}
       \ }
-
-# TypeScript & JavaScript
-- repo: leafgarland/typescript-vim
-- repo: peitalin/vim-jsx-typescript
 
 # PHP
 - repo: StanAngeloff/php.vim
@@ -109,22 +90,18 @@
     let g:doge_mapping_comment_jump_forward = '<c-j>'
     let g:doge_mapping_comment_jump_backward = '<c-k>'
 
-- {repo: tmhedberg/SimpylFold, on_ft: python}
 
-# }}}
-# Commands {{{
+# Commands
 # --------
+- { repo: jreybert/vimagit, on_cmd: [Magit, MagitOnly] }
+
+- repo: chaoren/vim-wordmotion
+- repo: tpope/vim-repeat
+- repo: junegunn/vim-peekaboo
 - repo: tpope/vim-commentary
 - repo: AndrewRadev/switch.vim
 - repo: mtth/scratch.vim
-
-- repo: voldikss/vim-floaterm
-  hook_add: |
-    let g:floaterm_position = 'center'
-    let g:floaterm_width = 0.9
-    let g:floaterm_height = 0.8
-    let g:floaterm_winblend = 0
-    let g:floaterm_autoclose = v:false
+- repo: junegunn/vim-easy-align
 
 - repo: mbbill/undotree
   on_cmd: UndotreeToggle
@@ -143,6 +120,14 @@
     let g:undotree_TreeNodeShape = '*'
     let g:undotree_WindowLayout= 3
 
+- repo: voldikss/vim-floaterm
+  hook_add: |
+    let g:floaterm_position = 'center'
+    let g:floaterm_width = 0.9
+    let g:floaterm_height = 0.8
+    let g:floaterm_winblend = 0
+    let g:floaterm_autoclose = v:false
+
 - repo: MattesGroeger/vim-bookmarks
   on_path: .*
   hook_source: |
@@ -152,83 +137,6 @@
     let g:bookmark_location_list = 1
     let g:bookmark_sign = '⚐'
 
-- repo: mzlogin/vim-markdown-toc
-  on_cmd: [ GenTocGFM, GenTocRedcarpet, GenTocGitLab, UpdateToc ]
-  hook_add: let g:vmt_auto_update_on_save = 0
-
-- repo: itchyny/calendar.vim
-  on_cmd: Calendar
-  hook_source: |
-    let g:calendar_google_calendar = 1
-    let g:calendar_google_task = 1
-
-- repo: vimwiki/vimwiki
-  on_map: { n: <Plug> }
-  on_cmd: [ VimwikiIndex, VimwikiUISelect ]
-  hook_add: |
-    let g:calendar_frame = 'default'
-    let g:vimwiki_use_calendar = 1
-    let g:vimwiki_hl_headers = 1
-    let g:vimwiki_hl_cb_checked = 1
-    let g:vimwiki_autowriteall = 0
-  hook_source: |
-    let g:vimwiki_ext2syntax = {
-      \ '.md':        'markdown',
-      \ '.Rmd':       'markdown',
-      \ '.rmd':       'markdown',
-      \ '.mdown':     'markdown',
-      \ '.markdown':  'markdown',
-      \ }
-    let g:vimwiki_list = [{
-      \		'path': '~/Documents/vimwiki',
-      \		'syntax': 'markdown', 'ext': '.md'
-      \ }]
-
-  # }}}
-# improved vim-functions
-# ----------------------
-- repo: osyo-manga/vim-anzu
-  on_map: { nv: <Plug> }
-  hook_add: let g:anzu_status_format = "%p(%i/%l) %w"
-
-- { repo: haya14busa/vim-asterisk, on_map: { nv: <Plug> }}
-- { repo: haya14busa/is.vim, on_map: { nv: <Plug> }}
-- { repo: rhysd/clever-f.vim, hook_add: let g:clever_f_fix_key_direction = 1 }
-- { repo: haya14busa/vim-edgemotion, on_map: { nv: <Plug> }}
-
-- repo: jiangmiao/auto-pairs
-
-# Coc.nvim - LSP
-# --------------
-- repo: neoclide/coc.nvim
-  merge: 0
-  build: yarn install --frozen-lockfile
-  hook_add: source $VIM_PATH/config/plugins/coc.vim
-  hook_source: |
-    source $VIM_PATH/config/plugins/coc-lsp.vim
-    source $VIM_PATH/config/plugins/coc-diagnostic-lsp.vim
-
-  # vim-clap
-  # --------
-- repo: liuchengxu/vim-clap
-  hook_add: source $VIM_PATH/config/plugins/clap.vim
-
-- repo: vn-ki/coc-clap
-  depends: vim-clap
-
-- repo: hokorobi/vim-clap-sessions
-  depends: vim-clap
-  hook_add: let g:clap_session_dir = $DATA_PATH . '/sessions'
-
-- repo: Shougo/defx.nvim
-  on_cmd: Defx
-  hook_source: source $VIM_PATH/config/plugins/defx.vim
-
-- { repo: kristijanhusak/defx-git, on_source: defx.nvim }
-- { repo: kristijanhusak/defx-icons, on_source: defx.nvim }
-
-# REPL
-# ----
 - repo: Vigemus/iron.nvim
   if: has('nvim')
   on_cmd: [ IronRepl, IronReplHere, IronFocus, IronSend, IronWatchCurrentFile ]
@@ -236,39 +144,6 @@
   on_func: IronUnwatchFile
   hook_add: let g:iron_map_defaults = 0 | let g:iron_map_extended = 0
   hook_source: luafile $VIM_PATH/config/plugins/iron.lua
-
-
-# Git
-# ----
-- repo: itchyny/vim-gitbranch
-
-- repo: rhysd/committia.vim
-  on_path: COMMIT_EDITMSG
-  hook_source: let g:committia_min_window_width = 70
-
-- { repo: jreybert/vimagit, on_cmd: [Magit, MagitOnly] }
-- { repo: hotwatermorning/auto-git-diff, on_ft: gitrebase }
-
-
-  # Completions {{{
-  # -----------
-- {repo: junegunn/fzf, merged: 0, build: './install --all'}
-
-- repo: SirVer/ultisnips
-  if: has('python3')
-  on_event: FileType
-  hook_add: |
-    let g:UltiSnipsExpandTrigger = '<C-l>'
-    let g:UltiSnipsListSnippets = ''
-    let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-    let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-    let g:UltiSnipsSnippetDirectories = [
-      \ $VIM_PATH . '/ultisnips',
-      \ ]
-    let g:UltiSnipsEditSplit='context'
-
-- repo: sniphpets/sniphpets
-  hook_add: let g:sniphpets_common_disable_shortcuts = 1
 
 - repo: liuchengxu/vista.vim
   on_cmd: Vista
@@ -297,49 +172,60 @@
         \ "variable": "\uf71b",
         \}
 
-- repo: Shougo/echodoc.vim
-  on_event: CompleteDone
+- repo: mzlogin/vim-markdown-toc
+  on_cmd: [ GenTocGFM, GenTocRedcarpet, GenTocGitLab, UpdateToc ]
+  hook_add: let g:vmt_auto_update_on_save = 0
+
+- repo: itchyny/calendar.vim
+  on_cmd: Calendar
   hook_source: |
-    call echodoc#enable()
+    let g:calendar_google_calendar = 1
+    let g:calendar_google_task = 1
 
-- repo: pechorin/any-jump.nvim
+- repo: vimwiki/vimwiki
+  on_map: { n: <Plug> }
+  on_cmd: [ VimwikiIndex, VimwikiUISelect ]
   hook_add: |
-    let [g:any_jump_window_width_ratio, g:any_jump_window_height_ratio] = mines#float#get_default_ratio()
-    let [_, g:any_jump_window_top_offset] = mines#float#calculate_pos_from_ratio(g:any_jump_window_width_ratio, g:any_jump_window_height_ratio)
+    let g:calendar_frame = 'default'
+    let g:vimwiki_use_calendar = 1
+    let g:vimwiki_hl_headers = 1
+    let g:vimwiki_hl_cb_checked = 1
+    let g:vimwiki_autowriteall = 0
+  hook_source: |
+    let g:vimwiki_ext2syntax = {
+      \ '.md':        'markdown',
+      \ '.Rmd':       'markdown',
+      \ '.rmd':       'markdown',
+      \ '.mdown':     'markdown',
+      \ '.markdown':  'markdown',
+      \ }
+      let g:vimwiki_list = [{
+        \		'path': '~/Documents/vimwiki',
+        \		'syntax': 'markdown', 'ext': '.md'
+        \ }]
 
-    let g:any_jump_search_prefered_engine = 'rg'
-    let g:any_jump_disable_default_keybindings = 1
+- repo: tpope/vim-dadbod
+
+- repo: kristijanhusak/vim-dadbod-ui
+  on_cmd: [ DBUIToggle,DBUIAddConnection,DBUI,DBUIFindBuffer,DBUIRenameBuffer ]
+  on_source: vim-dadbod
+  hook_source: source $VIM_PATH/config/plugins/dadbod-ui.vim
 
 
-# }}}
-# Wrappers / delimiters
-# ---------------------
-- repo: andymass/vim-matchup
-  hook_add: |
-    let g:matchup_matchparen_deferred = 1
-    let g:matchup_matchparen_deferred_show_delay = 100
-    let g:matchup_matchparen_hi_surround_always = 1
-    let g:matchup_override_vimtex = 1
-    let g:matchup_delim_start_plaintext = 0
-    let g:matchup_transmute_enabled = 0
+# Interface
+# ----
+- { repo: hotwatermorning/auto-git-diff, on_ft: gitrebase }
+- { repo: haya14busa/vim-asterisk, on_map: { nv: <Plug> }}
+- { repo: haya14busa/is.vim, on_map: { nv: <Plug> }}
+- { repo: rhysd/clever-f.vim, hook_add: let g:clever_f_fix_key_direction = 1 }
+- { repo: haya14busa/vim-edgemotion, on_map: { nv: <Plug> }}
 
-# Tabline & Bufferline
-# --------------------
-- repo: itchyny/lightline.vim
-  hook_add: source $VIM_PATH/config/plugins/lightline.vim
-
-- repo: shinchu/lightline-gruvbox.vim
-  depends: ligntline.vim
-
-- repo: josa42/vim-lightline-coc
-  depends: ligntline.vim
-
-- {repo: cocopon/lightline-hybrid.vim, depends: lightline.vim}
-- {repo: mengelbrecht/lightline-bufferline, depends: lightline.vim}
-
-  # Movements
-- repo: chaoren/vim-wordmotion
-- repo: tpope/vim-repeat
+- repo: osyo-manga/vim-anzu
+  on_map: { nv: <Plug> }
+  hook_add: let g:anzu_status_format = "%p(%i/%l) %w"
+- repo: rhysd/committia.vim
+  on_path: COMMIT_EDITMSG
+  hook_source: let g:committia_min_window_width = 70
 
 - repo: easymotion/vim-easymotion
   on_map: { n: <Plug> }
@@ -349,25 +235,6 @@
     let g:EasyMotion_prompt = 'Jump to → '
     let g:EasyMotion_keys = 'fjdksweoavn'
     let g:EasyMotion_smartcase = 1
-
-- repo: dominikduda/vim_current_word
-  hook_add: |
-    let g:vim_current_word#enabled = 1
-    let g:vim_current_word#highlight_current_word = 0
-    let g:vim_current_word#highlight_only_in_focused_window = 1
-  hook_source: |
-    augroup user_plugin_vim_current_word
-      autocmd!
-      autocmd FileType clap_input,denite,defx,qf,vista,coc-explorer,list let b:vim_current_word_disabled_in_this_buffer = 1
-      autocmd WinEnter * if &diff | let b:cursorword=0 | endif
-      autocmd InsertEnter * let b:vim_current_word_disabled_in_this_buffer = 1
-      autocmd InsertLeave * let b:vim_current_word_disabled_in_this_buffer = 1
-    augroup END
-
-
-# Prettification
-# --------------
-- repo: junegunn/vim-easy-align
 
 - repo: luochen1990/rainbow
   on_ft: [php, python, html, css, vim, json, jsonc, yaml typescript, typescriptreact, javascript, javascriptreact]
@@ -385,11 +252,78 @@
     let g:indentLine_concealcursor = 'niv'
     let g:indentLine_color_term = 239
     let g:indentLine_color_gui= '#725972'
-    let g:indentLine_bufTypeExclude = ['help', 'terminal', 'defx']
-    let g:indentLine_filetypeExclude = ['denite', 'defx', 'vista', 'vista_kind', 'coc-explorer', 'php', 'markdown', 'txt', 'startify', 'clap_input', 'clap_display', 'clap_spinner', 'clap_grep']
+    let g:indentLine_bufTypeExclude = ['help', 'terminal']
+    let g:indentLine_filetypeExclude = ['vista', 'vista_kind', 'coc-explorer', 'php', 'markdown', 'txt']
 
-# Operators {{{
-# ---------
+- repo: dominikduda/vim_current_word
+  hook_add: |
+    let g:vim_current_word#enabled = 1
+    let g:vim_current_word#highlight_current_word = 0
+    let g:vim_current_word#highlight_only_in_focused_window = 1
+  hook_source: |
+    augroup user_plugin_vim_current_word
+      autocmd!
+      autocmd FileType qf,vista,coc-explorer,list let b:vim_current_word_disabled_in_this_buffer = 1
+      autocmd WinEnter * if &diff | let b:cursorword=0 | endif
+      autocmd InsertEnter * let b:vim_current_word_disabled_in_this_buffer = 1
+      autocmd InsertLeave * let b:vim_current_word_disabled_in_this_buffer = 1
+    augroup END
+
+
+  # Completions & code analysis
+  # ---------------------------
+- repo: neoclide/coc.nvim
+  merge: 0
+  build: yarn install --frozen-lockfile
+  hook_add: source $VIM_PATH/config/plugins/coc.vim
+
+- repo: pechorin/any-jump.nvim
+  hook_add: |
+    let [g:any_jump_window_width_ratio, g:any_jump_window_height_ratio] = mines#float#get_default_ratio()
+    let [_, g:any_jump_window_top_offset] = mines#float#calculate_pos_from_ratio(g:any_jump_window_width_ratio, g:any_jump_window_height_ratio)
+
+    let g:any_jump_search_prefered_engine = 'rg'
+    let g:any_jump_disable_default_keybindings = 1
+
+- repo: SirVer/ultisnips
+  if: has('python3')
+  on_event: FileType
+  hook_add: |
+    let g:UltiSnipsExpandTrigger = '<C-l>'
+    let g:UltiSnipsListSnippets = ''
+    let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+    let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+    let g:UltiSnipsSnippetDirectories = [
+      \ $VIM_PATH . '/ultisnips',
+      \ ]
+    let g:UltiSnipsEditSplit='context'
+
+- repo: sniphpets/sniphpets
+  hook_add: let g:sniphpets_common_disable_shortcuts = 1
+
+- repo: Shougo/echodoc.vim
+  on_event: CompleteDone
+  hook_source: |
+    call echodoc#enable()
+
+
+# Tabline & Bufferline
+# --------------------
+- repo: itchyny/lightline.vim
+  hook_add: source $VIM_PATH/config/plugins/lightline.vim
+
+- repo: shinchu/lightline-gruvbox.vim
+  depends: ligntline.vim
+
+- repo: josa42/vim-lightline-coc
+  depends: ligntline.vim
+
+- {repo: cocopon/lightline-hybrid.vim, depends: lightline.vim}
+- {repo: mengelbrecht/lightline-bufferline, depends: lightline.vim}
+
+
+# Operators & Text Objects
+# ------------------------
 - repo: kana/vim-operator-user
 
 - repo: kana/vim-operator-replace
@@ -402,9 +336,6 @@
     let g:operator_sandwich_no_default_key_mappings = 1
     let g:textobj_sandwich_no_default_key_mappings = 1
 
-# }}}
-# Text Objects {{{
-# ------------
 - repo: kana/vim-textobj-user
 - repo: wellle/targets.vim
 - repo: machakann/vim-textobj-delimited
@@ -425,17 +356,8 @@
 - { repo: terryma/vim-expand-region, on_map: { x: <Plug> }}
 - { repo: AndrewRadev/sideways.vim, on_map: { onx: <Plug>Sideways }}
 
-# }}}
-# Database {{{
-- repo: tpope/vim-dadbod
 
-- repo: kristijanhusak/vim-dadbod-ui
-  on_cmd: [ DBUIToggle,DBUIAddConnection,DBUI,DBUIFindBuffer,DBUIRenameBuffer ]
-  on_source: vim-dadbod
-  hook_source: source $VIM_PATH/config/plugins/dadbod-ui.vim
-
-# }}}
-# Beter writing/coding focus {{{
+# Beter writing/coding focus
 # --------------------------
 - repo: junegunn/goyo.vim
   depends: limelight.vim
@@ -450,28 +372,13 @@
     let g:limelight_conceal_guifg = 'DarkGray'
     let g:limelight_conceal_guifg = '#777777'
 
-# }}}
-# Prose {{{
-# -----
-- repo: reedes/vim-pencil
-  hook_source: |
-   let g:pencil#wrapModeDefault = 'hard'
-   let g:pencil#textwidth = 74
-   let g:pencil#joinspaces = 0
-   let g:pencil#cursorwrap = 1
-   let g:pencil#conceallevel = 3
-   let g:pencil#concealcursor = 'c'
-   let g:pencil#softDetectSample = 20
-   let g:pencil#softDetectThreshold = 130
-
 - repo: reedes/vim-textobj-sentence
 - repo: reedes/vim-textobj-quote
 - repo: reedes/vim-wordchipper
 - repo: tpope/vim-abolish
 - repo: rhysd/vim-grammarous
 
-# }}}
-# Colorschemes {{{
+# Colorschemes
 # ------------
 - repo: Rigellute/shades-of-purple.vim
 - repo: logico/typewriter-vim
@@ -486,12 +393,9 @@
   hook_add: |
     let g:gruvbox_italic=1
     
-# }}}
-# Icons {{{
+# Icons
 # -----
 - repo: ryanoasis/vim-devicons
   hook_add: source $VIM_PATH/config/plugins/devicons.vim
-
-# }}}
 
 #  vim: set foldmethod=marker ts=2 sw=2 tw=80 et :

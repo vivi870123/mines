@@ -18,11 +18,7 @@ setlocal iskeyword+=:
 setlocal iskeyword+=#
 setlocal iskeyword+=-
 
-if winnr('$') > 2 + (bufname('defx') ==# '' ? 0 : 1)
-	wincmd K
-else
-	wincmd L
-endif
+wincmd L
 
 " Exit help window with 'q'
 nnoremap <silent><buffer> q :quit<CR>

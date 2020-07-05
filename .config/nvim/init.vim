@@ -25,10 +25,10 @@ augroup END
   let g:loaded_getscriptPlugin = 1
   let g:loaded_gzip = 1
   let g:loaded_logiPat = 1
-  let g:loaded_netrw = 1
-  let g:loaded_netrwFileHandlers  = 1
-  let g:loaded_netrwPlugin        = 1
-  let g:loaded_netrwSettings      = 1
+  " let g:loaded_netrw = 1
+  " let g:loaded_netrwFileHandlers  = 1
+  " let g:loaded_netrwPlugin        = 1
+  " let g:loaded_netrwSettings      = 1
   let g:loaded_matchit = 1
   let g:loaded_matchparen = 1
   let g:netrw_nogx = 1 " disable netrw's gx mapping.

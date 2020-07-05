@@ -65,18 +65,16 @@ let g:lightline = {
 
 
 function! s:lightline_is_lean() abort
-  return &filetype =~? '\v^coc-explorer|defx|diff|vista|magit|deol|undotree(diff)?$'
+  return &filetype =~? '\v^coc-explorer|diff|vista|magit|undotree(diff)?$'
 endfunction
 
 function! s:lightline_is_plain() abort
-  return &buftype ==? 'terminal' || &filetype =~? '\v^help|defx|deol|gina|coc-explorer|codi|vista_kind$'
+  return &buftype ==? 'terminal' || &filetype =~? '\v^help|gina|coc-explorer|vista_kind$'
 endfunction
 
 function! LightlineLineinfo() abort
   return &filetype ==? 'help'         ? ''  :
-  \      &filetype ==? 'defx'					? ' ' :
-  \      &filetype ==? 'codi'         ? ' ' :
-  \      &filetype ==? 'deol'         ? ' ' :
+  \      &filetype ==? 'coc-explorer'	? ' ' :
   \      &filetype ==? 'diff'         ? ' ' :
   \      &filetype ==? 'magit'        ? ' ' :
   \      &filetype =~? 'gina-ls'      ? ' ' :
@@ -130,12 +128,6 @@ function! LightlineFilenameActive() abort
   endif
   if &buftype ==? 'terminal'
     return has('nvim') ? b:term_title . ' (' . b:terminal_job_pid . ')' : ''
-  endif
-  if &filetype ==? 'defx'
-    return get(g:lightline, 'DEFX', '')
-  endif
-  if &filetype ==? 'tagbar'
-    return get(g:lightline, 'fname', '')
   endif
   if &filetype ==? 'vista_kind'
     return get(g:lightline, 'VISTA', '')

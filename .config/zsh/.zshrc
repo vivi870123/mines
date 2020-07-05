@@ -3,6 +3,7 @@
 export LANG=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
+
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 setopt autocd		# Automatically cd into typed directory.
@@ -31,9 +32,12 @@ _comp_options+=(globdots)		# Include hidden files.
 
 source /usr/share/nvm/init-nvm.sh
 
+
 export LS_COLORS="$(vivid generate molokai)"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 
+eval "$(pyenv virtualenv-init -)"

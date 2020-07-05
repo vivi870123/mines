@@ -118,7 +118,7 @@ set noshiftround      " Round indent to multiple of 'shiftwidth'
 " ------
 set timeout ttimeout
 set timeoutlen=500  " Time out on mappings
-set updatetime=400  " Idle time to write swap and trigger CursorHold
+set updatetime=300  " Idle time to write swap and trigger CursorHold
 set ttimeoutlen=10  " Time out on key codes
 
 " }}}
@@ -166,10 +166,11 @@ set shortmess+=A        " ignore annoying swapfile messages
 set shortmess+=I        " no splash screen
 set shortmess+=T        " truncate other message
 set shortmess+=O        " file-read message overwrites previous
-set shortmess+=W        " don't echo "[w]"/"[written]" when writing
+set shortmess+=W        " don't echo '[w]' '[written]' when writing
 set shortmess+=a        " use abbreviations in messages eg. `[RO]` instead of `[readonly]`
 set shortmess+=o        " overwrite file-written messages
 set shortmess+=t        " truncate file messages at start
+set shortmess+=c				" Don't pass messages to
 
 set scrolloff=2         " Keep at least 2 lines above/below
 set sidescrolloff=5     " Keep at least 5 lines left/right
@@ -186,7 +187,7 @@ set pumheight=15        " Pop-up menu's line height
 set helpheight=12       " Minimum help window height
 set previewheight=12    " Completion preview height
 
-set cmdheight=1         " Height of the command line
+set cmdheight=2         " Height of the command line
 set cmdwinheight=3      " Command-line lines
 set equalalways         " Resize windows on split or close
 set laststatus=2        " Always show a status line

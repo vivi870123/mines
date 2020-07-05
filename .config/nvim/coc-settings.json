@@ -138,7 +138,7 @@
 
   "highlight.colors.enable": true,
   "highlight.document.enable": false,
-
+	
   "intelephense.format.enable": true,
 
   "intelephense.stubs": [
@@ -186,10 +186,6 @@
 		}
 	},
 
-  "latex.lint.onSave": false,
-  "latex.forwardSearch.executable": "zathura",
-  "latex.forwardSearch.args": ["--unique", "file:%p#src:%l%f"],
-
   "list.nextKeymap": "<C-j>",
   "list.previousKeymap": "<C-k>",
   "list.insertMappings": {
@@ -224,6 +220,7 @@
   },
 
 	"pairs.alwaysPairCharacters": ["\""],
+	"pairs.enableBackspace": true,
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
 
   "phpls.enable": false,
@@ -253,7 +250,7 @@
     "typescriptreact": ["typescript"]
   },
   "snippets.loadFromExtensions": false,
-  "snippets.priority": 100,
+  "snippets.priority": 1,
   "snippets.snipmate.enable": false,
   "snippets.shortcut": "S",
   "snippets.triggerCharacters": [".", "t"],
@@ -315,10 +312,6 @@
   "suggest.triggerAfterInsertEnter": false,
   "suggest.triggerCompletionWait": 100,
 
-  "todolist.enable": true,
-  "todolist.autoUpload": false,
-  "todolist.maxsize": 5000,
-  "todolist.monitor": true,
 
   "tsserver.enableJavascript": true,
   "tsserver.formatOnType": true,
@@ -342,7 +335,80 @@
   "vimlsp.debug": true,
   "vimlsp.diagnostic.enable": false,
 
-  "workspace.ignoredFiletypes": ["markdown", "log", "txt", "help"]
+  "workspace.ignoredFiletypes": ["markdown", "log", "txt", "help"],
+
+	"yank.highlight.enable": true,
+	"yank.highlight.duration": 250,
+	
+	"explorer.previewAction.onHover": true,
+	"explorer.position": "right",
+	"explorer.toggle": true,
+	"explorer.icon.enableNerdfont": true,
+	"explorer.floating.width": 50,
+	"explorer.keyMappingMode": "none",
+	"explorer.keyMappings": {
+		"i": false, // cancel default mapkey
+
+		"<cr>": ["expandable?", "cd", "open"],
+
+		"gk": "expandablePrev",
+		"gj": "expandableNext",
+		"gl": "expand:recursive",
+		"gh": "collapse:recursive",
+
+		"h": "collapse",
+		"l": ["expandable?", "expand", "open"],
+		"J": ["toggleSelection", "nodeNext"],
+		"K": ["toggleSelection", "nodePrev"],
+
+		"cc": "copyFile",
+		"yy": "copyFilepath",
+		"yf": "copyFilename",
+		"p":	"pasteFile",
+
+		"sv": "open:split",
+		"sV": "open:split:plain",
+		"sg": "open:vsplit",
+		"st": "open:tab",
+
+		"<bs>": "gotoParent",
+		"gp": "preview:labeling",
+
+		"o": ["expanded?", "collapse", "expand"],
+
+		"dd": "delete",
+		"dD": "deleteForever",
+
+		"n": "addFile",
+		"N": "addDirectory",
+		"r": "rename",
+
+		".": "toggleHidden",
+		"R": "refresh",
+
+		"f": "search",
+		"F": "searchRecursive",
+
+		"gf": "gotoSource:file",
+		"gb": "gotoSource:buffer",
+
+		"?": "help",
+		"q":"quit",
+		"<esc>":"esc",
+		"X": "systemExecute",
+		"gd": "listDrive",
+
+		"[[": "sourcePrev",
+		"]]": "sourceNext",
+
+		"[d": "diagnosticPrev",
+		"]d": "diagnosticNext",
+
+		"[c": "gitPrev",
+		"]c": "gitNext",
+		"<<": "gitStage",
+		">>": "gitUnstage"
+	}
 }
 
 /* vim: set ft=jsonc foldmethod=marker ts=2 sw=2 tw=80 noet : */

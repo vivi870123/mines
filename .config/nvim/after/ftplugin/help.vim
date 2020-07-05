@@ -18,7 +18,7 @@ setlocal iskeyword+=:
 setlocal iskeyword+=#
 setlocal iskeyword+=-
 
-if winnr('$') > 2 + (bufname('defx') ==# '' ? 0 : 1)
+if winnr('$') > 2 + (bufname('coc-explorer') ==# '' ? 0 : 1)
 	wincmd K
 else
 	wincmd L
