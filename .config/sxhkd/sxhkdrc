@@ -1,11 +1,9 @@
 super + Return
 	$TERMINAL
+super + shift + Return
+	$TERMINAL -e bash ~/.config/vifm/scripts/vifmrun
 super + d
 	appmenu
-super + shift + d
-	dmenu_run -x 14 -y 8 -w 1340 -h 35 
-super + r
-	$TERMINAL -e bash ~/.config/vifm/scripts/vifmrun
 super + e
 	$TERMINAL -e neomutt
 super + m
@@ -21,7 +19,8 @@ super + shift + a
 super + shift + c
 	camtoggle
 super + shift + w
-	$TERMINAL -e nmtui
+	$TERMINAL -e sh -c 'bspc node -y floating; sleep 0.1; nmtui'
+	# $TERMINAL -e nmtui
 super + w
 	$BROWSER
 
@@ -140,7 +139,7 @@ XF86TaskPane
 XF86Mail
 	$TERMINAL -e neomutt
 XF86MyComputer
-	$TERMINAL -e $FILE /
+	$TERMINAL -e bash ~/.config/vifm/scripts/vifmrun
 
 
 
@@ -204,8 +203,8 @@ super + space
 #
 
 # set the window state
-#super + {t,shift + t,s}
-#bspc node -t {tiled,pseudo_tiled,floating}
+super + {t,shift + t,s}
+	bspc node -t {tiled,pseudo_tiled,floating}
 
 super + shift + space
 	bspc node focused -t \~floating
@@ -264,7 +263,7 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Toggle gaps
-super + shift + Return
+super + shift + d
 	bspc config window_gap {0,15}
 # Increase/descrease gap size
 super { ,+ shift }+ z
