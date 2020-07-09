@@ -45,6 +45,8 @@ alias \
 	ka="killall" \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
 	sdn="sudo shutdown -h now" \
 	sdr="sudo shutdown -r now" \
 	f="$FILE" \
@@ -52,7 +54,8 @@ alias \
 	v="$EDITOR" \
 	xi="sudo xbps-install" \
 	xr="sudo xbps-remove -R" \
-	xq="xbps-query"
+	xq="xbps-query" \
+	z="zathura"
 
 # Some other stuff
 alias \
